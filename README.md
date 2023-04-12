@@ -45,7 +45,7 @@ By importing these functions and storing them in constants, you can use them in 
 
     test(async({page})=>{  
     await page.goto('https"//google.com');
-    expect(page).toHaveTitle("Google")
+    await expect(page).toHaveTitle("Google")
     })
 
 This code defines a Playwright test case using the test function that was imported in the previous line. The async keyword indicates that the test function is asynchronous, meaning that it will execute some async operations such as navigating to a website.
@@ -57,7 +57,7 @@ The await keyword is used to pause the execution of the test function until the 
 
     test(async({page})=>{  
     await page.goto('https"//google.com');
-    expect(page).toHaveTitle("Google")
+    aexpect(page).toHaveTitle("Google")
     })
 
 In the above code☝, await is used before page.goto() to pause the execution of the test function until the page has been navigated to. This ensures that the test will not try to access elements on the page before it has fully loaded.
