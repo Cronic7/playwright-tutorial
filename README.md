@@ -43,22 +43,30 @@ The test function is used to define a new test case, and the expect function is 
 
 By importing these functions and storing them in constants, you can use them in your test cases without having to reference the full module name every time.
 
-    test(async({page})=>{  
-    await page.goto('https"//google.com');
-    await expect(page).toHaveTitle("Google")
+    test('hastitle', async ({ page }) => {
+    await page.goto('https://google.com');
+    await expect(page).toHaveTitle('Google');
     })
 
+
 This code defines a Playwright test case using the test function that was imported in the previous line. The async keyword indicates that the test function is asynchronous, meaning that it will execute some async operations such as navigating to a website.
+
+test('hastitle', async ({ page }) => { ... }): This is the test function that defines the test. The first argument is a description of the test, which is used for reporting purposes. The second argument is an asynchronous function that takes a page object as an argument. The page object represents a web page and is used to interact with the page.  
+await page.goto('https://google.com'): This line navigates the page object to the URL 'https://google.com'. The await keyword is used to pause the execution of the test until the page has fully loaded.
+
+await expect(page).toHaveTitle('Google'): This line verifies that the title of the web page loaded by page.goto() is 'Google'. The expect function is used to create an assertion, which checks whether the actual value returned by page.title() is equal to the expected value 'Google'. The await keyword is used to pause the execution of the test until the assertion has completed.
+
 The async keyword is used to define an asynchronous function. An asynchronous function is a function that may perform asynchronous operations, such as network requests or file I/O, and returns a promise that resolves with the result of the operation. When a function is defined as async, it allows you to use the await keyword inside the function body to pause the execution of the function until a promise is resolved.
 
 In the code you provided, the test function is defined as asynchronous with the async keyword, indicating that it may perform asynchronous operations such as navigating to a website.
 
 The await keyword is used to pause the execution of the test function until the promise returned by page.goto() is resolved. This means that the code will not move on to the next line until the goto operation is complete.
 
-    test(async({page})=>{  
-    await page.goto('https"//google.com');
-    aexpect(page).toHaveTitle("Google")
+    test('hastitle', async ({ page }) => {
+    await page.goto('https://google.com');
+    await expect(page).toHaveTitle('Google');
     })
+
 
 In the above code☝, await is used before page.goto() to pause the execution of the test function until the page has been navigated to. This ensures that the test will not try to access elements on the page before it has fully loaded.
 
